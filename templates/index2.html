@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+
+    <title>OnepageShoppingmall</title>
+
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            font-family: 'Gowun Batang', serif;
+        }
+
+        .img {
+            width: 800px;
+            height: 450px;
+
+            background-image: url("https://www.gasinamoo.com/files/attach/images/154/706/011/da7ca5ce850922a7fdc71f8be919fc43.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        .notice {
+            color: red;
+            width: 800px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .item-order {
+            width: 800px;
+        }
+
+        .btn-order {
+            margin: auto;
+            width: 100px;
+
+            display: block;
+        }
+
+        .wrap {
+            margin: auto;
+            width: 800px;
+        }
+
+        .menuBar {
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 30px;
+            background-color: linen;
+        }
+
+        ul:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: 4B4B4B;
+            text-align: center;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-size: x-large;
+        }
+
+        li a:hover:not(.active) {
+            background-color: gainsboro;
+        }
+
+        .active {
+            background-color: blanchedalmond;
+        }
+    </style>
+
+    <script>
+        function order() {
+            alert('주문이 완료되었습니다!');
+        }
+        $(function () {
+            $('#datetimepicker1').datetimepicker({ format: 'L' });
+            $('#datetimepicker2').datetimepicker({
+                format: 'L',
+                useCurrent: false
+            });
+            $("#datetimepicker1").on("change.datetimepicker", function (e) {
+                $('#datetimepicker2').datetimepicker('minDate', e.date);
+            });
+            $("#datetimepicker2").on("change.datetimepicker", function (e) {
+                $('#datetimepicker1').datetimepicker('maxDate', e.date);
+            });
+        });
+        document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);;
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="menuBar">
+            <li><a class="active" href="#home">Sky Service</a></li>
+            <li><a href="#news">공항 날씨</a></li>
+            <li><a href="#contact">관광지</a></li>
+        </ul>
+        <div class="img"></div>
+        <div class="notice">
+            · 아래 운항스케줄은 항공사 사정으로 변경될 수 있습니다.
+            <p>· 항공사를 클릭하면 해당 항공사 홈페이지로 연결됩니다.</p>
+        </div>
+        <div class="item-order">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">항공사</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">제주항공</option>
+                    <option value="2">에어부산</option>
+                    <option value="3">에어서울</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">공항</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">인천공항</option>
+                    <option value="2">김포공항</option>
+                    <option value="3">제주공항</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">편명</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <input type='time' /> &nbsp; <input type='time' />
+            <form>
+            </form>
+            <div class='col-md-3 col-xs-4'>
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"
+                            value="01/11/2020">
+                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-3 col-xs-4'>
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2"
+                            value="01/15/2020">
+                        <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="order()" class="btn btn-primary btn-order">조회하기</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
