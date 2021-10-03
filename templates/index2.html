@@ -25,12 +25,68 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.datepicker.regional['ko'] = {
+                closeText: '닫기',
+                prevText: '이전달',
+                nextText: '다음달',
+                currentText: '오늘',
+                monthNames: ['1월(JAN)', '2월(FEB)', '3월(MAR)', '4월(APR)', '5월(MAY)', '6월(JUN)',
+                    '7월(JUL)', '8월(AUG)', '9월(SEP)', '10월(OCT)', '11월(NOV)', '12월(DEC)'],
+                monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월',
+                    '7월', '8월', '9월', '10월', '11월', '12월'],
+                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                weekHeader: 'Wk',
+                dateFormat: 'yy-mm-dd',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: true,
+                yearSuffix: '',
+                showOn: "button",
+                buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                buttonImageOnly: true,
+                // buttonText: "달력",
+                showButtonPanel: true,
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                yearRange: 'c-99:c+99',
+            };
+            $.datepicker.setDefaults($.datepicker.regional['ko']);
+
+            $('#sdate').datepicker();
+            $('#sdate').datepicker("option", "maxDate", $("#edate").val());
+            $('#sdate').datepicker("option", "onClose", function (selectedDate) {
+                $("#edate").datepicker("option", "minDate", selectedDate);
+            });
+
+            $('#edate').datepicker();
+            $('#edate').datepicker("option", "minDate", $("#sdate").val());
+            $('#edate').datepicker("option", "onClose", function (selectedDate) {
+                $("#sdate").datepicker("option", "maxDate", selectedDate);
+            });
+        });
+
+        
+    </script>
+
+
+
+
 
     <title>OnepageShoppingmall</title>
 
-
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
     <style type="text/css">
         * {
             font-family: 'Gowun Batang', serif;
@@ -106,33 +162,22 @@
         .active {
             background-color: blanchedalmond;
         }
-    </style>
 
-    <script>
-        function order() {
-            alert('주문이 완료되었습니다!');
+        .date_Input {
+            width: 120px;
         }
-        $(function () {
-            $('#datetimepicker1').datetimepicker({ format: 'L' });
-            $('#datetimepicker2').datetimepicker({
-                format: 'L',
-                useCurrent: false
-            });
-            $("#datetimepicker1").on("change.datetimepicker", function (e) {
-                $('#datetimepicker2').datetimepicker('minDate', e.date);
-            });
-            $("#datetimepicker2").on("change.datetimepicker", function (e) {
-                $('#datetimepicker1').datetimepicker('maxDate', e.date);
-            });
-        });
-        document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);;
-    </script>
-</head>
+
+        .input_Boxes {
+            background-color: linen;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
 
 <body>
     <div class="wrap">
         <ul class="menuBar">
-            <li><a class="active" href="#home">Sky Service</a></li>
+            <li><a class="active" href="http://127.0.0.1:5000/">Sky Service</a></li>
             <li><a href="#news">공항 날씨</a></li>
             <li><a href="#contact">관광지</a></li>
         </ul>
@@ -141,68 +186,53 @@
             · 아래 운항스케줄은 항공사 사정으로 변경될 수 있습니다.
             <p>· 항공사를 클릭하면 해당 항공사 홈페이지로 연결됩니다.</p>
         </div>
-        <div class="item-order">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
+        <div class="input_Boxes">
+            <div style="float: left; margin-right: 30px;" class="select_Airline">
+                <div style="float: left;" class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">항공사</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select style="float: left;" class="custom-select" id="inputGroupSelect01">
                     <option selected></option>
                     <option value="1">제주항공</option>
                     <option value="2">에어부산</option>
                     <option value="3">에어서울</option>
                 </select>
             </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
+            <div style="float: left; margin-right: 30px;" class="select_Airport">
+                <div style="float: left;" class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">공항</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select style="float: left;" class="custom-select" id="inputGroupSelect01">
                     <option selected></option>
                     <option value="1">인천공항</option>
                     <option value="2">김포공항</option>
+                    <option value="3">청주공항</option>
+                    <option value="3">무안공항</option>
+                    <option value="3">광주공항</option>
+                    <option value="3">군산공항</option>
+                    <option value="3">김해공항</option>
                     <option value="3">제주공항</option>
                 </select>
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
+            <div style="float: left; margin-bottom: 30px;" class="search_FlightNumber">
+                <div style="float: left;" class="input-group-prepend">
                     <span class="input-group-text">편명</span>
                 </div>
                 <input type="text" class="form-control" aria-label="Default"
                     aria-describedby="inputGroup-sizing-default">
             </div>
-            <input type='time' /> &nbsp; <input type='time' />
-            <form>
-            </form>
-            <div class='col-md-3 col-xs-4'>
-                <div class="form-group">
-                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"
-                            value="01/11/2020">
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
+            <div style="display: inline-block; float: left; margin-right: 30px;" class="select_Time">
+                <input type='time' /> ~ <input type='time' />
             </div>
-            <div class='col-md-3 col-xs-4'>
-                <div class="form-group">
-                    <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2"
-                            value="01/15/2020">
-                        <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
+            <div style="display: inline-block;">
+                <p>출발일: <input class="date_Input" type="text" id="sdate">
+                    ~ 도착일: <input class="date_Input" type="text" id="edate">
             </div>
-            <button type="button" onclick="order()" class="btn btn-primary btn-order">조회하기</button>
         </div>
+        <button style="margin-top: 20px;" type="button" onclick="order()"
+            class="btn btn-primary btn-order">조회하기</button>
     </div>
 
 </body>
 
 </html>
-
-
