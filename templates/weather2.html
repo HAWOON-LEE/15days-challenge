@@ -78,7 +78,7 @@
             });
         });
 
-        
+
     </script>
 
 
@@ -155,13 +155,15 @@
             font-size: x-large;
         }
 
-        li a:hover:not(.active) {
+        li a:hover:not(.active2) {
             background-color: gainsboro;
         }
 
-        .active {
-            background-color:gainsboro;        
+        .active2 {
+            background-color: gainsboro;
         }
+
+
 
         .date_Input {
             width: 120px;
@@ -172,38 +174,37 @@
             padding: 20px;
             border-radius: 15px;
         }
+
+        .airport_Select {
+            margin-bottom: 20px;
+        }
+
+        .weather_Chart {
+            font-size: large;
+        }
+
+        .weather_Icon {
+            position: relative;
+            bottom: 13px;
+            right: 7px;
+        }
     </style>
 
 <body>
     <div class="wrap">
         <ul class="menuBar">
             <li><a class="active" href="http://127.0.0.1:5000/">Sky Service</a></li>
-            <li><a href="http://127.0.0.1:5000/weather">공항 날씨</a></li>
-            <li><a href="#contact">관광지</a></li>
+            <li><a class="active2" href="http://127.0.0.1:5000/weather">공항 날씨</a></li>
+            <li><a class="active3" href="#contact">관광지</a></li>
         </ul>
         <div class="img"></div>
         <div class="notice">
-            · 아래 운항스케줄은 항공사 사정으로 변경될 수 있습니다.
-            <p>· 항공사를 클릭하면 해당 항공사 홈페이지로 연결됩니다.</p>
+            <p>· 여행지 기상 정보는 현재 날짜 기준으로 최대 16일 이후까지 제공됩니다.</p>
         </div>
         <div class="input_Boxes">
-            <div style="float: left; margin-right: 30px;" class="select_Airline">
-                <div style="float: left;" class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">항공사</label>
-                </div>
-                <select style="float: left;" class="custom-select" id="inputGroupSelect01">
-                    <option selected></option>
-                    <option value="1">제주항공</option>
-                    <option value="2">에어부산</option>
-                    <option value="3">에어서울</option>
-                </select>
-            </div>
-            <div style="float: left; margin-right: 30px;" class="select_Airport">
-                <div style="float: left;" class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">공항</label>
-                </div>
-                <select style="float: left;" class="custom-select" id="inputGroupSelect01">
-                    <option selected></option>
+            <div class="airport_Select">
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>도착지 공항을 선택해주세요.</option>
                     <option value="1">인천공항</option>
                     <option value="2">김포공항</option>
                     <option value="3">청주공항</option>
@@ -214,60 +215,39 @@
                     <option value="3">제주공항</option>
                 </select>
             </div>
-            <div style="float: left; margin-bottom: 30px;" class="search_FlightNumber">
-                <div style="float: left;" class="input-group-prepend">
-                    <span class="input-group-text">편명</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Default"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div style="display: inline-block; float: left; margin-right: 30px;" class="select_Time">
-                <input type='time' /> ~ <input type='time' />
-            </div>
+
             <div style="display: inline-block;">
-                <p>출발일: <input class="date_Input" type="text" id="sdate">
-                    ~ 도착일: <input class="date_Input" type="text" id="edate">
+                출발 날짜: <input class="date_Input" type="text" id="sdate">
+                ~ 복귀 날짜: <input class="date_Input" type="text" id="edate">
             </div>
         </div>
         <button style="margin-top: 20px;" type="button" onclick="order()"
             class="btn btn-primary btn-order">조회하기</button>
 
-        	<table style="margin-top: 20px;" class="table" id="tables">
-                <thead>
-                  <tr>
-                    <th scope="col">시간</th>
-                    <th scope="col">출발지</th>
-                    <th scope="col">도착지</th>
-                    <th scope="col">항공사</th>
-                    <th scope="col">편명</th>
-                    <th scope="col">탑승구</th>
-                    <th scope="col">현황</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">18:00</th>
-                    <td>서울</td>
-                    <td>부산</td>
-                    <td>에어부산</td>
-                    <td>C8</td>
-                    <td>저쪽</td>
-                    <td>꽉참</td>
+        <table style="margin-top: 20px;" class="table" id="tables">
+            <thead>
+                <tr>
+                    <th scope="col">날짜</th>
+                    <th scope="col">최대 기온</th>
+                    <th scope="col">최저 기온</th>
+                    <th scope="col">강수량</th>
+                    <th scope="col">구름</th>
+                    <th scope="col">풍속</th>
+                    <th scope="col">요약</th>
                 </tr>
-                  <!-- <tr>
-                    <th scope="row">신사임당</th>
-                    <td>2</td>
-                    <td>서울시 영등포구</td>
-                    <td>010-1234-5678</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">장영실</th>
-                    <td>1</td>
-                    <td>부산시 중구</td>
-                    <td>010-1234-5678</td>
-                  </tr>
-                </tbody> -->
-              </table>
+            </thead>
+            <tbody class="weather_Chart">
+                <tr>
+                    <th scope="row">10/15</th>
+                    <td>32℃</td>
+                    <td>24℃</td>
+                    <td>15mm</td>
+                    <td>65%</td>
+                    <td>4.5m/s</td>
+                    <td><img class="weather_Icon" src=" http://openweathermap.org/img/wn/02d.png" alt=""></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </body>
