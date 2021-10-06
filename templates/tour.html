@@ -1,0 +1,452 @@
+<!Doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300;700&display=swap"
+          rel="stylesheet">
+
+
+    <title>page</title>
+
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+
+
+    <style type="text/css">
+        * {
+            font-family: 'Jua', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /*메뉴바*/
+        nav {
+            font-size: 17pt;
+            font-family: 'PT Sans', Arial, Sans-serif;
+            position: relative;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0 auto;
+            width: auto;
+        }
+
+        nav li {
+        }
+
+        nav a {
+            line-height: 70px;
+            height: 70px;
+        }
+
+        nav li a {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        nav li:last-child a {
+            border-right: 0;
+        }
+
+        nav a:hover, nav a:active {
+        }
+
+        nav a#pull {
+            display: none;
+        }
+
+        html {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        ul {
+            /*list-style-type: none;*/
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            /*text-align: center;*/
+        }
+
+        li {
+            /*position: relative;*/
+            display: inline-block;
+        }
+
+        li a {
+            color: #FFFFFF;
+            /*text-align: left;*/
+            padding: 14.5px 120px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            /*color: #597812;*/
+            color: #FFD400;
+            font-weight: normal;
+        }
+
+        .menu {
+            width: 5000px;
+            height: 50px;
+            text-align: center;
+            max-width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-color: #333333;
+            color: white;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .ssp {
+            padding-bottom: 50px;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            background-color: #F6F6F6;
+        }
+
+        /*header {*/
+        /*    position: fixed;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    right: 0;*/
+
+        /*    height: 75px;*/
+        /*    padding: 1rem;*/
+        /*    color: white;*/
+        /*    background: teal;*/
+        /*    font-weight: bold;*/
+        /*    display: flex;*/
+        /*    justify-content: space-between;*/
+        /*    align-items: center;*/
+        /*}*/
+
+
+        /*여기까지가 메뉴바*/
+
+        /*메인이미지*/
+        .main-img {
+
+            width: auto;
+            height: 460px;
+            max-width: 100%;
+            max-height: 100%;
+            margin-top: auto;
+
+            background-image: url("https://www.gasinamoo.com/files/attach/images/154/706/011/da7ca5ce850922a7fdc71f8be919fc43.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        /*여기까지가 메인이미지*/
+
+        /*메인이미지 아래 부분*/
+
+        .main {
+            width: 1000px;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+        }
+
+        /*코멘트 바로 위에 선 긋기*/
+        .comment-border-top {
+            border-top: 1px solid #808080;
+            padding-top: 15px;
+        }
+
+        /*박스 바로 위에 선 긋기*/
+        .box-border-top {
+            border-top: 1px solid #d3d3d3;
+            padding-top: 15px;
+        }
+
+        /*박스 그림자 효과*/
+        .box-shadow {
+            box-shadow: 0 2px 5px 0px black;
+        }
+
+        /*이미지와 박스 전체 공간*/
+        .box {
+            /*background-color: green;*/
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+            max-width: 100%;
+        }
+
+        /*이미지와 박스 margin 확보*/
+        .box-margin {
+            margin: 10px 0px 10px 0px;
+
+        }
+
+        .allmini-box {
+            margin: auto;
+            width: 1000px;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+        }
+
+        .mini-box-magin {
+            overflow: auto;
+            float: left;
+            width: 1000px;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 10px 10px 10px 30px;
+        }
+
+        /*이미지 위치*/
+        .img-position {
+            position: absolute;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+        }
+
+
+        .air-box-margin {
+
+            margin: 10px auto;
+        }
+
+
+        /*스크롤 박스 스타일*/
+        .scroll-box {
+            overflow: auto;
+            width: 72%;
+            height: 100px;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .scroll-box2 {
+            overflow: auto;
+            width: 100%;
+            height: 100px;
+            float: left;
+            margin: auto;
+        }
+
+        /*버튼 위치*/
+        .button-position {
+            width: 25%;
+            float: right;
+        }
+
+
+    </style>
+
+
+    <script>
+        function order() {
+            alert('주문이 완료되었습니다!');
+        }
+
+        // function postArticle() {
+        //         let url = $('#post-url').val()
+        //         let comment = $('#post-comment').val()
+
+        //         $.ajax({
+        //             type: "POST",
+        //             url: "/memo",
+        //             data: {url_give:url, comment_give:comment},
+        //             success: function (response) { // 성공하면
+        //                 alert(response["msg"]);
+        //                 window.location.reload()
+        //             }
+        //         })
+        //     }
+
+        //     function showArticles() {
+        //         $.ajax({
+        //             type: "GET",
+        //             url: "/memo",
+        //             data: {},
+        //             success: function (response) {
+        //                 let articles = response['all_articles']
+        //                 for (let i = 0; i < articles.length; i++) {
+        //                     let title = articles[i]['title']
+        //                     let image = articles[i]['image']
+        //                     let url = articles[i]['url']
+        //                     let desc = articles[i]['desc']
+        //                     let comment = articles[i]['comment']
+
+        //                     let temp_html = `<div class="card">
+        //                                         <img class="card-img-top"
+        //                                              src="${image}"
+        //                                              alt="Card image cap">
+        //                                         <div class="card-body">
+        //                                             <a target="_blank" href="${url}" class="card-title">${title}</a>
+        //                                             <p class="card-text">${desc}</p>
+        //                                             <p class="card-text comment">${comment}</p>
+        //                                         </div>
+        //                                     </div>`
+        //                     $('#cards-box').append(temp_html)
+        //                 }
+        //             }
+        //         })
+        //     }
+        </script>
+    </script>
+
+</head>
+
+<body>
+<div class="menu ssp">
+    <nav class="clearfix">
+        <ul class="clearfix">
+            <li style="margin: 0"><a href="http://127.0.0.1:5000/">Sky Service</a></li> <!--""<-여기 부분에 URL 작성하면 됨-->
+            <li><a href="http://127.0.0.1:5000/weather">공항 날씨</a></li>
+            <li><a href="http://127.0.0.1:5000/tour">관광지</a></li>
+        </ul>
+        <!--        <a id="pull" href="#"></a>-->
+    </nav>
+</div>
+
+<div>
+    <div class="main-img"></div>
+
+</div>
+
+
+<div class="main air-box-margin">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">항공사</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected></option>
+            <option value="1">제주항공</option>
+            <option value="2">에어부산</option>
+            <option value="3">에어서울</option>
+        </select>
+    </div>
+    <div class="box">
+        <div class="card-deck box-margin box-border-top">
+            <div class="card">
+                <img class="card-img-top img-position"
+                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                     alt="Card image cap">
+            </div>
+            <div class="card box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">타이틀</h5>
+                    <p class="card-text">주소</p>
+                    <p class="card-text">거리</p>
+                    <div class="comment-border-top">
+                        <div class="scroll-box">
+                            <p class="card-text">코멘트
+                                111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                            </p>
+                        </div>
+                        <button type="button" onclick="order()" class="btn btn-primary button-position">바로 예약</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck box-margin box-border-top">
+            <div class="card">
+                <img class="card-img-top img-position"
+                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                     alt="Card image cap">
+            </div>
+            <div class="card box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">타이틀</h5>
+                    <p class="card-text">주소</p>
+                    <p class="card-text">거리</p>
+                    <div class="comment-border-top">
+                        <div class="scroll-box">
+                            <p class="card-text">코멘트
+                                111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                            </p>
+                        </div>
+                        <button type="button" onclick="order()" class="btn btn-primary button-position">바로 예약</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-border-top allmini-box">
+            <div class="card mini-box-magin box-shadow" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">타이틀</h5>
+                    <div class="scroll-box2">
+                        <p class="card-text">코멘트
+                            111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary">바로 예약</a>
+                </div>
+            </div>
+            <div class="card mini-box-magin box-shadow" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">타이틀</h5>
+                    <div class="scroll-box2">
+                        <p class="card-text">코멘트
+                            111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary">바로 예약</a>
+                </div>
+            </div>
+            <div class="card mini-box-magin box-shadow" style="width: 18rem;">
+                <img class="card-img-top"
+                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">타이틀</h5>
+                    <div class="scroll-box2">
+                        <p class="card-text">코멘트
+                            111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary">바로 예약</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
