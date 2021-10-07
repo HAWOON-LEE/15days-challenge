@@ -8,10 +8,6 @@ def home():
 @app.route('/weather')
 def weather():
    return render_template('weather.html')
-
-@app.route('/tour')
-def tour():
-   return render_template('tour.html')
    
 
 if __name__ == '__main__':  

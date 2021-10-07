@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+* {
+    font-family: 'Gowun Batang', serif;
+}
+
+.img {
+    width: 800px;
+    height: 450px;
+
+    background-image: url("https://www.gasinamoo.com/files/attach/images/154/706/011/da7ca5ce850922a7fdc71f8be919fc43.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+
+.notice {
+    color: red;
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.item-order {
+    width: 800px;
+}
+
+.btn-order {
+    margin: auto;
+    width: 100px;
+
+    display: block;
+}
+
+.wrap {
+    margin: auto;
+    width: 800px;
+}
+
+.menuBar {
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    background-color: linen;
+}
+
+ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: 4B4B4B;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+li a:hover:not(.active2) {
+    background-color: gainsboro;
+}
+
+.active2 {
+    background-color: gainsboro;
+}
+
+
+
+.date_Input {
+    width: 120px;
+}
+
+.input_Boxes {
+    background-color: linen;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.airport_Select {
+    margin-bottom: 20px;
+}
+
+.weather_Chart {
+    font-size: large;
+}
+
+.weather_Icon {
+    position: relative;
+    bottom: 13px;
+    right: 7px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.Datepicker {
+    display: inline-block;
+}

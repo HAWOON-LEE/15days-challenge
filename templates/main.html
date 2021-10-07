@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="static/main.css">
     <script>
         $(document).ready(function () {
             $.datepicker.regional['ko'] = {
@@ -77,109 +79,15 @@
                 $("#sdate").datepicker("option", "maxDate", selectedDate);
             });
         });
-
-        
     </script>
 
-
-
-
-
-    <title>OnepageShoppingmall</title>
-
-    <style type="text/css">
-        * {
-            font-family: 'Gowun Batang', serif;
-        }
-
-        .img {
-            width: 800px;
-            height: 450px;
-
-            background-image: url("https://www.gasinamoo.com/files/attach/images/154/706/011/da7ca5ce850922a7fdc71f8be919fc43.jpg");
-            background-position: center;
-            background-size: cover;
-        }
-
-
-        .notice {
-            color: red;
-            width: 800px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .item-order {
-            width: 800px;
-        }
-
-        .btn-order {
-            margin: auto;
-            width: 100px;
-
-            display: block;
-        }
-
-        .wrap {
-            margin: auto;
-            width: 800px;
-        }
-
-        .menuBar {
-            padding: 0;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 30px;
-            background-color: linen;
-        }
-
-        ul:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: 4B4B4B;
-            text-align: center;
-            padding: 14px 40px;
-            text-decoration: none;
-            font-size: x-large;
-        }
-
-        li a:hover:not(.active) {
-            background-color: gainsboro;
-        }
-
-        .active {
-            background-color:gainsboro;        
-        }
-
-        .date_Input {
-            width: 120px;
-        }
-
-        .input_Boxes {
-            background-color: linen;
-            padding: 20px;
-            border-radius: 15px;
-        }
-    </style>
+    <title>Sky Service</title>
 
 <body>
     <div class="wrap">
         <ul class="menuBar">
             <li><a class="active" href="http://127.0.0.1:5000/">Sky Service</a></li>
             <li><a href="http://127.0.0.1:5000/weather">공항 날씨</a></li>
-            <li><a href="http://127.0.0.1:5000/tour">관광지</a></li>
         </ul>
         <div class="img"></div>
         <div class="notice">
@@ -188,7 +96,7 @@
         </div>
         <div class="input_Boxes">
             <div style="float: left; margin-right: 30px;" class="select_Airline">
-                <div style="float: left;" class="input-group-prepend">
+                <div class="select_Airline_toggle">
                     <label class="input-group-text" for="inputGroupSelect01">항공사</label>
                 </div>
                 <select style="float: left;" class="custom-select" id="inputGroupSelect01">
@@ -224,7 +132,7 @@
             <div style="display: inline-block; float: left; margin-right: 30px;" class="select_Time">
                 <input type='time' /> ~ <input type='time' />
             </div>
-            <div style="display: inline-block;">
+            <div class="Datepicker">
                 <p>출발일: <input class="date_Input" type="text" id="sdate">
                     ~ 도착일: <input class="date_Input" type="text" id="edate">
             </div>
@@ -232,9 +140,9 @@
         <button style="margin-top: 20px;" type="button" onclick="order()"
             class="btn btn-primary btn-order">조회하기</button>
 
-        	<table style="margin-top: 20px;" class="table" id="tables">
-                <thead>
-                  <tr>
+        <table class="table" id="tables">
+            <thead>
+                <tr>
                     <th scope="col">시간</th>
                     <th scope="col">출발지</th>
                     <th scope="col">도착지</th>
@@ -242,10 +150,10 @@
                     <th scope="col">편명</th>
                     <th scope="col">탑승구</th>
                     <th scope="col">현황</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <th scope="row">18:00</th>
                     <td>서울</td>
                     <td>부산</td>
@@ -254,20 +162,7 @@
                     <td>저쪽</td>
                     <td>꽉참</td>
                 </tr>
-                  <!-- <tr>
-                    <th scope="row">신사임당</th>
-                    <td>2</td>
-                    <td>서울시 영등포구</td>
-                    <td>010-1234-5678</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">장영실</th>
-                    <td>1</td>
-                    <td>부산시 중구</td>
-                    <td>010-1234-5678</td>
-                  </tr>
-                </tbody> -->
-              </table>
+        </table>
     </div>
 
 </body>
